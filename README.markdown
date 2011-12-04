@@ -13,8 +13,8 @@ Requirements
 Download & Run crudy
 --------------------
 
-Download the latest source code from https://github.com/fsauter/crudy Download page. Current  release is 0.1. 
-Move the source to your download folder and extract the archive.
+Download the latest source code from https://github.com/fsauter/crudy/downloads.
+Current release is <b>0.1</b>. Switch (`cd`) to your download folder and extract the archive.
 
 Example 1:
 
@@ -58,7 +58,7 @@ Example
 
     Wrote generated model code to: "target/Category.php"
 
-/************ SUCCESS ************/
+    /************ SUCCESS ************/
 
 ### Generated code:
 
