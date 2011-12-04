@@ -1,4 +1,16 @@
 #!/usr/bin/php
 <?php
+/**
+ * Executable Script.
+ * To create use this script the permissions on the script must have +x for 
+ * executable and also have the right path of php in the interpreter line.
+ * 
+ * Permission Fix: chmod +x crudy
+ * 
+ * @author Florian Sauter <floonweb@gmail.com>
+ * @version 0.1
+ * @package de.rentoudu.
+ */
+
 require_once 'crudy.php';
 ?>

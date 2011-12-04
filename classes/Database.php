@@ -1,5 +1,18 @@
 <?php
+/**
+ * Holds the Database class.
+ * 
+ * @author Florian Sauter <floonweb@gmail.com>
+ * @version 0.1
+ * @package crudy
+ */
 
+/**
+ * Database helper class.
+ * 
+ * @author Florian Sauter <floonweb@gmail.com>
+ * @package crudy
+ */
 class Database {
 	
 	private $connection;

@@ -1,4 +1,13 @@
 <?php
+/**
+ * Holds the Template class.
+ * 
+ * @todo Find a better alternative.
+ * 
+ * @author Florian Sauter <floonweb@gmail.com>
+ * @version 0.1
+ * @package crudy
+ */
 
 /**
  * Copyright (C) 2002-2004 Oliver Hitz <oliver@net-track.ch>
@@ -20,9 +29,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  * MA  02111-1307, USA.
  * 
- * http://www.net-track.ch/opensource/template/README.php
+ * @link http://www.net-track.ch/opensource/template/README.php
  */
-
 class Template
 {
 
