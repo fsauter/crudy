@@ -1,4 +1,12 @@
 <?php
+/**
+ * Main script.
+ * 
+ * @author Florian Sauter <floonweb@gmail.com>
+ * @version 0.1
+ * @package crudy
+ */
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 require_once 'functions.inc';
@@ -31,7 +39,7 @@ if(isset($arguments['p'])) { $password = $arguments['p']; }
 if(isset($arguments['d'])) { $database = $arguments['d']; }
 if(isset($arguments['t'])) { $table = $arguments['t']; }
 if(isset($arguments['t'])) { $table = $arguments['t']; }
-if(isset($arguments['o'])) { $outputFile = $arguments['o']; } else { $outputFile = 'gen/$.php'; }
+if(isset($arguments['o'])) { $outputFolder = $arguments['o']; } else { $outputFolder = 'target'; }
 if(isset($arguments['tpl'])) { $templateFile = $arguments['tpl']; } else { $templateFile = 'templates/model.tpl'; }
 if(isset($arguments['v'])) { $debug = $arguments['v'] == 'true' || $arguments['v'] == '1'; } else { $debug = false; }
 
@@ -87,6 +95,9 @@ if(empty($table)) {
 		array_push($tables, $userTable);
 		say('Selected table "'.$userTable.'"', 'green');
 	}
+} else {
+	say('Processing table "'.$table.'"', 'green');
+	array_push($tables, $table);
 }
 hr();
 
@@ -110,12 +121,12 @@ foreach($tables as $tableToGenerate) {
 	
 	br();
 	
-	$tableOutputFile = str_replace('$', $className, $outputFile);
-	$bytes = file_put_contents($tableOutputFile, $modelClass, LOCK_EX);
+	$outputFile = $outputFolder.DIRECTORY_SEPARATOR.$className.'.php';
+	$bytes = file_put_contents($outputFile, $modelClass, LOCK_EX);
 	if($bytes === false) {
-		abort('Error while writing model to: "'.$tableOutputFile.'". Please check folder permissions.', 'red');
+		abort('Error while writing model to: "'.$outputFile.'". Please check folder permissions.', 'red');
 	} else {
-		say('Wrote generated model code to: "'.$tableOutputFile.'"', 'green');
+		say('Wrote generated model code to: "'.$outputFile.'"', 'green');
 	}
 }
 
